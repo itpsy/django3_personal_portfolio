@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <meta charset="UTF-8">
+    <title>itpsy.de</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <!-- eigener stylesheet -->
+    <link rel="stylesheet" href="{% static 'portfolio/custom.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="{% static "portfolio/Logo.png" %}">
+
+</head>
+
+<body>
+
+    <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static "portfolio/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Seiten Logo">
+            <span>itpsy</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% static "portfolio/resume.pdf" %}">Lebenslauf</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/sebastian-rode-5b8ba61a9/" target="_blank">LinkedIn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/sebastian.r.lewandowski" target="_blank">Facebook</a>
+              </li>
+              <li>
+                <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+
+</body>
+</html>
